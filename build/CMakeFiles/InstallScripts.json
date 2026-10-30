@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/fed/Folio/chess/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
