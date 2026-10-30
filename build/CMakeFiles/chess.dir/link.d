@@ -3,6 +3,8 @@ chess: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o \
   CMakeFiles/chess.dir/main.c.o \
+  CMakeFiles/chess.dir/chess.c.o \
+  CMakeFiles/chess.dir/engine.c.o \
   /usr/lib/libSDL3_image.so.0.4.8 \
   /usr/lib/libSDL3.so.0.4.18 \
   /usr/lib/gcc/x86_64-pc-linux-gnu/16/libgcc.a \
@@ -45,6 +47,10 @@ chess: \
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o:
 
 CMakeFiles/chess.dir/main.c.o:
+
+CMakeFiles/chess.dir/chess.c.o:
+
+CMakeFiles/chess.dir/engine.c.o:
 
 /usr/lib/libSDL3_image.so.0.4.8:
 

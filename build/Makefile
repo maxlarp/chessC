@@ -129,6 +129,54 @@ chess/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/build
 .PHONY : chess/fast
 
+chess.o: chess.c.o
+.PHONY : chess.o
+
+# target to build an object file
+chess.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/chess.c.o
+.PHONY : chess.c.o
+
+chess.i: chess.c.i
+.PHONY : chess.i
+
+# target to preprocess a source file
+chess.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/chess.c.i
+.PHONY : chess.c.i
+
+chess.s: chess.c.s
+.PHONY : chess.s
+
+# target to generate assembly for a file
+chess.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/chess.c.s
+.PHONY : chess.c.s
+
+engine.o: engine.c.o
+.PHONY : engine.o
+
+# target to build an object file
+engine.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/engine.c.o
+.PHONY : engine.c.o
+
+engine.i: engine.c.i
+.PHONY : engine.i
+
+# target to preprocess a source file
+engine.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/engine.c.i
+.PHONY : engine.c.i
+
+engine.s: engine.c.s
+.PHONY : engine.s
+
+# target to generate assembly for a file
+engine.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chess.dir/build.make CMakeFiles/chess.dir/engine.c.s
+.PHONY : engine.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -162,6 +210,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... chess"
+	@echo "... chess.o"
+	@echo "... chess.i"
+	@echo "... chess.s"
+	@echo "... engine.o"
+	@echo "... engine.i"
+	@echo "... engine.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

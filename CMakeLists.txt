@@ -7,7 +7,7 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 find_package(SDL3 REQUIRED)
 find_package(SDL3_image REQUIRED)
 
-add_executable(chess main.c)
+add_executable(chess main.c chess.c engine.c)
 
 target_link_libraries(chess PRIVATE
   SDL3::SDL3

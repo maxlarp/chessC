@@ -1,11 +1,11 @@
 #include "chess.h"
 #include <string.h>
 
-static inline bool get_color(char piece_raw) {
+bool get_color(char piece_raw) {
   return piece_raw > W_KING;
 }
 
-static inline void cast_rays(char board[8][8], char deltas[4][2], SelectedPiece piece, bool piece_color, char out_board[8][8]) {
+void cast_rays(char board[8][8], char deltas[4][2], SelectedPiece piece, bool piece_color, char out_board[8][8]) {
   for (int i = 0; i < 4; i++) {
     int j = 1;
     while (true) {
@@ -31,7 +31,7 @@ static inline void cast_rays(char board[8][8], char deltas[4][2], SelectedPiece 
   }
 }
 
-static bool is_in_check(char board[8][8], SelectedPiece piece) {
+bool is_in_check(char board[8][8], SelectedPiece piece) {
   char piece_raw = board[piece.x][piece.y];
   bool piece_color = get_color(piece_raw);
 
@@ -107,7 +107,7 @@ static bool is_in_check(char board[8][8], SelectedPiece piece) {
   return false;
 }
 
-static inline void pawn_moves_generate(char board[8][8], bool piece_color, SelectedPiece piece, char last_move[2][2], char out_board[8][8]) {
+void pawn_moves_generate(char board[8][8], bool piece_color, SelectedPiece piece, char last_move[2][2], char out_board[8][8]) {
   char mod = (piece_color) ? -1 : 1;
   int forward_y = piece.y + mod;
   if (forward_y < 0 || forward_y > 7) return; // no promotion support: pawn stuck on last rank
@@ -142,7 +142,7 @@ static inline void pawn_moves_generate(char board[8][8], bool piece_color, Selec
   }
 }
 
-static inline void knight_moves_generate(char board[8][8], SelectedPiece piece, bool piece_color, char out_board[8][8]) {
+void knight_moves_generate(char board[8][8], SelectedPiece piece, bool piece_color, char out_board[8][8]) {
   char deltas[8][2] = {
     {-1, 2}, {1, 2},
     {2, -1}, {2, 1},
@@ -160,7 +160,7 @@ static inline void knight_moves_generate(char board[8][8], SelectedPiece piece, 
   }
 }
 
-static inline void ray_moves_generate(char board[8][8], SelectedPiece piece, char piece_type, bool piece_color, char out_board[8][8]) {
+void ray_moves_generate(char board[8][8], SelectedPiece piece, char piece_type, bool piece_color, char out_board[8][8]) {
   char deltas[4][2];
   if (piece_type == W_BISHOP) {
     char bishop_deltas[4][2] = {{1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
@@ -175,7 +175,7 @@ static inline void ray_moves_generate(char board[8][8], SelectedPiece piece, cha
 
 // Reports whether the king, temporarily placed on (to_x, to_y), would be
 // attacked. Used to reject castling through or into check.
-static inline bool king_path_attacked(char board[8][8], SelectedPiece from, int to_x, int to_y) {
+bool king_path_attacked(char board[8][8], SelectedPiece from, int to_x, int to_y) {
   char king = board[from.x][from.y];
   char vacated = board[to_x][to_y];
 
@@ -188,7 +188,7 @@ static inline bool king_path_attacked(char board[8][8], SelectedPiece from, int 
   return attacked;
 }
 
-static inline void king_moves_generate(char board[8][8], SelectedPiece piece, bool piece_color, bool can_castle[2][3], char out_board[8][8]) {
+void king_moves_generate(char board[8][8], SelectedPiece piece, bool piece_color, bool can_castle[2][3], char out_board[8][8]) {
   for (int i = -1; i < 2; i++) {
     for (int j = -1; j < 2; j++) {
       int new_x = i + piece.x;
@@ -222,7 +222,7 @@ static inline void king_moves_generate(char board[8][8], SelectedPiece piece, bo
 }
 
 // Locates the king of the given color, or {-1, -1} when there is none.
-static SelectedPiece find_king(char board[8][8], bool color) {
+SelectedPiece find_king(char board[8][8], bool color) {
   for (int i = 0; i < 8; i++) {
     for (int j = 0; j < 8; j++) {
       if (board[i][j] == W_KING + color * 6) return (SelectedPiece){i, j};
@@ -231,7 +231,7 @@ static SelectedPiece find_king(char board[8][8], bool color) {
   return (SelectedPiece){-1, -1};
 }
 
-static void valid_move_generate(char board[8][8], SelectedPiece piece, char last_move[2][2], bool can_castle[2][3], char out_board[8][8]) {
+void valid_move_generate(char board[8][8], SelectedPiece piece, char last_move[2][2], bool can_castle[2][3], char out_board[8][8]) {
   char piece_raw = board[piece.x][piece.y];
   char piece_typed = piece_raw % 6;
   bool piece_color = get_color(piece_raw);
@@ -290,7 +290,7 @@ static void valid_move_generate(char board[8][8], SelectedPiece piece, char last
 }
 
 // True when the given side has at least one legal move.
-static bool side_has_moves(char board[8][8], bool color, char last_move[2][2], bool can_castle[2][3]) {
+bool side_has_moves(char board[8][8], bool color, char last_move[2][2], bool can_castle[2][3]) {
   char moves[8][8];
   for (int i = 0; i < 8; i++) {
     for (int j = 0; j < 8; j++) {

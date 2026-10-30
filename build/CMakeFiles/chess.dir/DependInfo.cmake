@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/fed/Folio/chess/chess.c" "CMakeFiles/chess.dir/chess.c.o" "gcc" "CMakeFiles/chess.dir/chess.c.o.d"
+  "/home/fed/Folio/chess/engine.c" "CMakeFiles/chess.dir/engine.c.o" "gcc" "CMakeFiles/chess.dir/engine.c.o.d"
   "/home/fed/Folio/chess/main.c" "CMakeFiles/chess.dir/main.c.o" "gcc" "CMakeFiles/chess.dir/main.c.o.d"
   "" "chess" "gcc" "CMakeFiles/chess.dir/link.d"
   )

@@ -1,5 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/chess.dir/link.d"
+  "CMakeFiles/chess.dir/chess.c.o"
+  "CMakeFiles/chess.dir/chess.c.o.d"
+  "CMakeFiles/chess.dir/engine.c.o"
+  "CMakeFiles/chess.dir/engine.c.o.d"
   "CMakeFiles/chess.dir/main.c.o"
   "CMakeFiles/chess.dir/main.c.o.d"
   "chess"

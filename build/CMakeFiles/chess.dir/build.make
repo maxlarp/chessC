@@ -86,20 +86,52 @@ CMakeFiles/chess.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/chess.dir/main.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fed/Folio/chess/main.c -o CMakeFiles/chess.dir/main.c.s
 
+CMakeFiles/chess.dir/chess.c.o: CMakeFiles/chess.dir/flags.make
+CMakeFiles/chess.dir/chess.c.o: /home/fed/Folio/chess/chess.c
+CMakeFiles/chess.dir/chess.c.o: CMakeFiles/chess.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fed/Folio/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/chess.dir/chess.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/chess.dir/chess.c.o -MF CMakeFiles/chess.dir/chess.c.o.d -o CMakeFiles/chess.dir/chess.c.o -c /home/fed/Folio/chess/chess.c
+
+CMakeFiles/chess.dir/chess.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/chess.dir/chess.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/fed/Folio/chess/chess.c > CMakeFiles/chess.dir/chess.c.i
+
+CMakeFiles/chess.dir/chess.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/chess.dir/chess.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fed/Folio/chess/chess.c -o CMakeFiles/chess.dir/chess.c.s
+
+CMakeFiles/chess.dir/engine.c.o: CMakeFiles/chess.dir/flags.make
+CMakeFiles/chess.dir/engine.c.o: /home/fed/Folio/chess/engine.c
+CMakeFiles/chess.dir/engine.c.o: CMakeFiles/chess.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fed/Folio/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/chess.dir/engine.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/chess.dir/engine.c.o -MF CMakeFiles/chess.dir/engine.c.o.d -o CMakeFiles/chess.dir/engine.c.o -c /home/fed/Folio/chess/engine.c
+
+CMakeFiles/chess.dir/engine.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/chess.dir/engine.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/fed/Folio/chess/engine.c > CMakeFiles/chess.dir/engine.c.i
+
+CMakeFiles/chess.dir/engine.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/chess.dir/engine.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/fed/Folio/chess/engine.c -o CMakeFiles/chess.dir/engine.c.s
+
 # Object files for target chess
 chess_OBJECTS = \
-"CMakeFiles/chess.dir/main.c.o"
+"CMakeFiles/chess.dir/main.c.o" \
+"CMakeFiles/chess.dir/chess.c.o" \
+"CMakeFiles/chess.dir/engine.c.o"
 
 # External object files for target chess
 chess_EXTERNAL_OBJECTS =
 
 chess: CMakeFiles/chess.dir/main.c.o
+chess: CMakeFiles/chess.dir/chess.c.o
+chess: CMakeFiles/chess.dir/engine.c.o
 chess: CMakeFiles/chess.dir/build.make
 chess: CMakeFiles/chess.dir/compiler_depend.ts
 chess: /usr/lib/libSDL3_image.so.0.4.8
 chess: /usr/lib/libSDL3.so.0.4.18
 chess: CMakeFiles/chess.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fed/Folio/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable chess"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fed/Folio/chess/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable chess"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chess.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying assets to build folder..."
 	/usr/bin/cmake -E copy_directory /home/fed/Folio/chess/assets /home/fed/Folio/chess/build/assets

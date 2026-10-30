@@ -1,1 +1,1 @@
-/usr/bin/cc -Wl,--dependency-file=CMakeFiles/chess.dir/link.d CMakeFiles/chess.dir/main.c.o -o chess  /usr/lib/libSDL3_image.so.0.4.8 /usr/lib/libSDL3.so.0.4.18
+/usr/bin/cc -Wl,--dependency-file=CMakeFiles/chess.dir/link.d CMakeFiles/chess.dir/main.c.o CMakeFiles/chess.dir/chess.c.o CMakeFiles/chess.dir/engine.c.o -o chess  /usr/lib/libSDL3_image.so.0.4.8 /usr/lib/libSDL3.so.0.4.18
